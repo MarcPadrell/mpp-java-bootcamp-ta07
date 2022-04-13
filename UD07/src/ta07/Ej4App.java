@@ -162,7 +162,7 @@ public class Ej4App {
 	 */
 	public static void showInfoQuantity(Hashtable<String, Integer> productos_cantidad) {
 
-		int listar_info = JOptionPane.showConfirmDialog(null, "¿Desea consultar información sobre algún artículo?");
+		int listar_info = JOptionPane.showConfirmDialog(null, "¿Desea consultar la cantidad de un producto sobre algún artículo?");
 
 		while (JOptionPane.OK_OPTION == listar_info) {
 
