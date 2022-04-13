@@ -23,7 +23,8 @@ public class Ej4App {
 		addQuantitiyArticle(productos_cantidad);
 		showInfoQuantity(productos_cantidad);
 		showInfoPrice(productos_precio);
-		showInfoList(lista, 30.0, listSum(lista, productos_precio), priceIva(listSum(lista, productos_precio), 0.21));
+		double money = payedQuantity();
+		showInfoList(lista, money, listSum(lista, productos_precio), priceIva(listSum(lista, productos_precio), 0.21));
 
 	}
 
@@ -162,7 +163,7 @@ public class Ej4App {
 	 */
 	public static void showInfoQuantity(Hashtable<String, Integer> productos_cantidad) {
 
-		int listar_info = JOptionPane.showConfirmDialog(null, "¿Desea consultar la cantidad de un producto sobre algún artículo?");
+		int listar_info = JOptionPane.showConfirmDialog(null, "¿Desea consultar la cantidad de STOCK sobre algún artículo?");
 
 		while (JOptionPane.OK_OPTION == listar_info) {
 
@@ -205,6 +206,13 @@ public class Ej4App {
 		System.out.println("Cantidad pagada: " + payed_quantity + " €.");
 		System.out.println("Cambio a devolver: " + (payed_quantity - price_iva) + " €.");
 
+	}
+	
+	public static double payedQuantity() {
+		
+		double articulo_info = Double.parseDouble(JOptionPane.showInputDialog(null, "Cuanto dinero tiene para pagar?: "));
+		
+		return articulo_info;
 	}
 
 }
